@@ -1,44 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import { Drink } from "./App5";
 
-interface Drink {
-  idDrink: string;
-  strDrink: string;
-  strInstructions: string;
-  strDrinkThumb: string;
-  strIngredient1: string;
-  strIngredient2: string;
-  strIngredient3: string;
-  strIngredient4: string;
-  strIngredient5: string;
-  strMeasure1:number;
-  strMeasure2:number;
-  strMeasure3:number;
-  strMeasure4:number;
-  strMeasure5:number;
-}
 
 interface CardBoxProps{
-    url:string
+    drinks:Drink[]
 }
 
 function CardBox( props: CardBoxProps) {
-  const [drinks, setDrinks] = useState<Drink[]>([]);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    fetch(`${props.url}`)
-      .then((response) => response.json())
-      .then((drinks) => {
-        setDrinks(drinks.drinks);
-        console.log(drinks);
-      })
-      .catch((error) => setError(error));
-  }, [props.url]);
+  
   return (
     <div className="row">
       <h1>CardBox</h1>
       <ul>
-        { drinks!==undefined && drinks!==null? drinks.map((drink) => (
+        { props.drinks!==undefined && props.drinks!==null? props.drinks.map((drink) => (
           <Card key={parseInt(drink.idDrink)}
             id={parseInt(drink.idDrink)}
             imagePath={drink.strDrinkThumb}
