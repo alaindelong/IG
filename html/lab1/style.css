@@ -1,0 +1,172 @@
+h1{
+    background-color: aquamarine;
+    flex-grow: 1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    background-color:rgb(221, 230, 230);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 20%;
+    margin-bottom: 1px;
+    
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:chartreuse;
+    flex-grow: 1;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    box-sizing:border-box;
+    border-width: 1px;
+    border-style: solid;
+    height: 50%;
+    border-color: rgb(119, 119, 230);
+    padding: 2px;
+}
+
+.d{
+    display: flex;
+    box-sizing:border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color:red;
+    flex-direction: column;
+    margin: 1px;
+    
+}
+.d1{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 8px;
+    flex-basis: 25%;
+}
+.d11{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    margin-bottom:4px;
+    box-sizing:border-box;
+    background-color:rgb(221, 230, 230);
+}
+.d12{
+    flex-grow: 1;
+    background-color: rgb(14, 104, 104);
+    padding: 10px;
+    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    flex-basis:75%;
+}
+.d121{
+    
+    display: flex;
+    flex-direction: column;
+    border-width:0.5px;
+    border-style:solid;
+    box-sizing:border-box;
+    margin: 1px;
+}
+.r{
+     
+    display: flex; 
+    flex-direction: row;
+    border-width:0.1px;
+    justify-content: space-evenly;
+}
+.d2{
+    flex-grow: 2;
+    flex-basis: 50%;
+    background-color:rgb(221, 230, 230);
+    padding: 8px;
+}
+.d3{
+    flex-grow: 1;
+    flex-basis: 25%;
+    background-color:rgb(221, 230, 230);
+}
+
+.footer{
+    background-color:rgb(221, 230, 230);
+    display: flex;
+    box-sizing:border-box;
+    height: 30%;
+    justify-content: center;
+    flex-direction: column;
+}
+.df0{
+    display: flex;
+    justify-content: center;
+}
+.df1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    
+}
+.df2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 60%;
+}
+.form{
+    justify-content: center;
+    box-sizing:border-box;
+    border-style:solid;
+    border-width:0.5px;
+    width: 40%;
+    margin-left:30% ;
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+    height: 80%;
+}
+.btn{
+    background-color: chocolate;
+    width: 40%;
+    margin-left: 30%;
+    border-radius: 10px;
+    height: 80%;
+    margin-top: 5%;
+}
+.dfbtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.df1i{
+    flex-grow: 1; 
+    height: 20px;
+    box-shadow: 4px 4px 4px #000;
+    border-radius:10px;
+}
+
+.df2i{
+    flex-grow: 1; 
+    margin-right: 4%; 
+    margin-left: 4%;
+    height: 30px;
+    box-shadow: 4px 4px 4px #000;
+    border-radius:10px
+}

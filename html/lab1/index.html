@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAIB 1</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="container">
+  <h1>Laboratorio 1</h1>
+  <!-- header-->
+  <div class="header">
+    <div style="flex-grow: 1;"><strong>Flex&Grid</strong></div>
+    <div style="flex-grow: 1;"><input type="text" placeholder="search" /></div>
+    <div class="nav">
+      <div style="background-color: blueviolet;">ArtWork</div>
+      <div>Topic</div>
+      <div>WebDesign</div>
+    </div>
+  </div>
+  <!-- main-->
+  <div class="main">
+    <!--card1-->
+    <div class="d1 d">
+      <div class="d11">
+        <h2>display flex</h2>
+        <p style="font-size: x-small;"> I principali elementi della pagina (header, main, form) sono realizzati con la funzionalità flexbox
+          poiché consente di ottenere una disposizione che si adatta al cambiare delle dimensioni del
+          dispositivo (al contrario del display: grid)</p>
+      </div>
+      <div class="d12">
+        <h6>si sfrutta la proprietà flex grow per realizzare la tabella sottostante</h6>
+        <div class="d121">
+          <div class="r">
+            <div style="flex-grow: 1; border-style:solid;margin: 1px;border-width:0.1px">r1</div>
+            <div style="flex-grow: 1;border-style:solid;margin: 1px;border-width:0.1px">r1</div>
+            <div style="flex-grow: 1;border-style:solid;margin: 1px;border-width:0.1px">r1</div>
+          </div>
+          <div class="r">
+            <div style="flex-grow: 1;border-style:solid;margin: 1px;border-width:0.1px">r2</div>
+            <div style="flex-grow: 2;border-style:solid;margin: 1px;border-width:0.1px">r2</div>
+            <div style="flex-grow: 1;border-style:solid;margin: 1px;border-width:0.1px">r2</div>
+          </div>
+          <div class="r">
+            <div style="flex-grow: 3;border-style:solid;margin: 1px;border-width:0.1px">r3</div>
+            <div style="flex-grow: 2;border-style:solid;margin: 1px;border-width:0.1px">r3</div>
+            <div style="flex-grow: 1;border-style:solid;margin: 1px;border-width:0.1px">r3</div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+    <!--card2-->
+    <div class="d2 d">
+      <div class="d21">
+        <p> primo div</p>
+        
+      </div>
+      <div class="d22">
+        <p>2 condo div</p>
+
+      </div>
+
+    </div>
+    <!--card3-->
+    <div class="d3 d">
+      <div class="d31">
+        <p> primo div</p>
+      </div>
+      <div class="d32">
+        <p>2 condo div</p>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!--footer-->
+  <div class="footer">
+    <div class="form">
+     <div class="df0"> <h5>Submit your work!</h5> </div>
+      <div class="df1">
+         <div class="df1"> <input type="text" placeholder="name" class="df1i" /></div>
+        <div class="df1"><input type="text" placeholder="surname" class="df1i"/></div>
+      </div>
+      <div class="df2">
+        <input type="text" placeholder="describe your work" class="df2i"/>
+    </div class="dfbtn">
+        <button type="submit" class="btn">Submit</button>
+    </div>
+    <div style="display: flex; justify-content: center;"><p>contatti:+3375451014 email:alain@alain.fr</p></div>
+  </div>
+
+
+</body>
+
+</html>
