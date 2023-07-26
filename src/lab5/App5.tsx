@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useAxios from "axios-hooks";
 import Search from "./Search";
 import CardBox from "./CardBox";
 interface Drink {
@@ -24,7 +25,8 @@ function App5(){
     const [searchStr, setSearchStr] = useState("")
     const [url, setUrl] = useState(prefix)
     const [drinks, setDrinks] = useState<Drink[]>([]);
-    const [error, setError] = useState(null);
+    const [err, setErr] = useState(null);
+    const [selected, setSelected] = useState<number[]>([])
 
      const onChange = (str:string): void =>{
         setSearchStr(str);
@@ -35,8 +37,16 @@ function App5(){
         //setSearchStr("")
      }
 
+     const unSelect = (cardId:number) =>{
+      setSelected(selected.filter( el => el !== cardId))
+     }
+
+     const select = (cardId:number) =>{
+      setSelected([...selected, cardId])
+     }
+
     
-  useEffect(() => {
+ /* useEffect(() => {
     fetch(`${url}`)
       .then((response) => response.json())
       .then((drinks) => {
@@ -44,13 +54,26 @@ function App5(){
         console.log(drinks);
       })
       .catch((error) => setError(error));
-  }, [url]);
+  }, [url]);*/
+  
+
+  const[{data, loading,error}, refresh] = useAxios(`${url}`)
+
+  useEffect(()=>{
+    if(data !== undefined){
+      setDrinks(data.drinks)
+      console.log("number of card selected "+selected.length)
+    }
+  },[data, selected])
+  
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error!</p>
      
     return(
         <div className="container">
             <h1>LAIB 5</h1>
             <Search searchStr={searchStr} onChange={onChange} onClick={onClick}/>
-           { error===null? <CardBox drinks={drinks}/>:<div> une erreur est survenue {error}</div> }
+           { err===null? <CardBox drinks={drinks} select={select } unSelect={unSelect}/>:<div> une erreur est survenue {err}</div> }
         </div>
     )
 }
