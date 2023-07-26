@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { Drink } from "./App5";
+import IngredientDetails from "./IngredientDetails";
 
 
 interface CardBoxProps{
@@ -14,7 +15,7 @@ function CardBox( props: CardBoxProps) {
       <h1>CardBox</h1>
       <ul>
         { props.drinks!==undefined && props.drinks!==null? props.drinks.map((drink) => (
-          <Card key={parseInt(drink.idDrink)}
+           <Card key={parseInt(drink.idDrink)}
             id={parseInt(drink.idDrink)}
             imagePath={drink.strDrinkThumb}
             title={drink.strDrink}
@@ -22,7 +23,9 @@ function CardBox( props: CardBoxProps) {
             ingredient={[drink.strIngredient1, drink.strIngredient2,
             drink.strIngredient3, drink.strIngredient4, drink.strIngredient5]} 
             quantity={[drink.strMeasure1,drink.strMeasure2,drink.strMeasure3,
-                drink.strMeasure4,drink.strMeasure5]}/>
+                drink.strMeasure4,drink.strMeasure5]}/> 
+                
+               
         )):<div>{"nothing found"}</div>}
       </ul>
     </div>
