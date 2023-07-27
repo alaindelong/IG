@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="container">
       {/*<App4/>*/}
-     {<App5/>}
-     {/*<App6/>*/}
+     {/*<App5/>*/}
+     {<App6/>}
     </div>
   );
 }

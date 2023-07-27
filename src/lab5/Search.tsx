@@ -3,7 +3,7 @@ import React from "react";
 interface SearchProps{
     searchStr: string,
     onChange:(str:string) =>void
-    onClick:() => void
+    onClick:(str:string) => void
 }
 function Search(props:SearchProps){
     return(
@@ -13,7 +13,7 @@ function Search(props:SearchProps){
                 value={props.searchStr} onChange={(e) =>props.onChange(e.target.value)}/>
             </div>
             <div className="col-md-3">
-               <button type="submit" className="btn btn-primary" onClick={() =>props.onClick()}>Search</button>
+               <button type="submit" className="btn btn-primary" onClick={() =>props.onClick(props.searchStr)}>Search</button>
             </div>
 
         </div>

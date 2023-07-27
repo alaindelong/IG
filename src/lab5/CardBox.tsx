@@ -25,7 +25,7 @@ function CardBox( props: CardBoxProps) {
           ingredient={[drink.strIngredient1, drink.strIngredient2,
           drink.strIngredient3, drink.strIngredient4, drink.strIngredient5]}
           quantity={[drink.strMeasure1, drink.strMeasure2, drink.strMeasure3,
-          drink.strMeasure4, drink.strMeasure5]} select={props.select} unSelect={props.unSelect }/> 
+          drink.strMeasure4, drink.strMeasure5]} select={props.select} unSelect={props.unSelect}/> 
                 
                
         )):<div>{"nothing found"}</div>}

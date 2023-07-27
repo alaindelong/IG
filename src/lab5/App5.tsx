@@ -2,22 +2,8 @@ import React, { useEffect, useState } from "react";
 import useAxios from "axios-hooks";
 import Search from "./Search";
 import CardBox from "./CardBox";
-interface Drink {
-    idDrink: string;
-    strDrink: string;
-    strInstructions: string;
-    strDrinkThumb: string;
-    strIngredient1: string;
-    strIngredient2: string;
-    strIngredient3: string;
-    strIngredient4: string;
-    strIngredient5: string;
-    strMeasure1:number;
-    strMeasure2:number;
-    strMeasure3:number;
-    strMeasure4:number;
-    strMeasure5:number;
-  }
+import { Drink } from "./State";
+
 
 
 function App5(){
@@ -31,8 +17,9 @@ function App5(){
      const onChange = (str:string): void =>{
         setSearchStr(str);
      }
-     const onClick = () : void =>{
+     const onSearch = (str:string) : void =>{
         console.log("search string "+searchStr)
+        onChange(str)
         setUrl(`${prefix}${searchStr}`)
         //setSearchStr("")
      }
@@ -72,8 +59,8 @@ function App5(){
     return(
         <div className="container">
             <h1>LAIB 5</h1>
-            <Search searchStr={searchStr} onChange={onChange} onClick={onClick}/>
-           { err===null? <CardBox drinks={drinks} select={select } unSelect={unSelect}/>:<div> une erreur est survenue {err}</div> }
+            <Search searchStr={searchStr} onChange={onChange} onClick={onSearch}/>
+           { err===null? <CardBox drinks={drinks} select={select} unSelect={unSelect}/>:<div> une erreur est survenue {err}</div> }
         </div>
     )
 }
