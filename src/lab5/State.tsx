@@ -19,14 +19,22 @@ export interface State{
     searchStr:string,
     url:string,
     drinks: Drink[],
-    selected: number[]
+    selected: number[],
+    select: (id:number) =>void,
+    unSelect: (id:number) =>void,
+    onChange:(str:string) =>void,
+    onClick:(str:string) => void
 }
 
 export const initialState:State ={
     searchStr: "",
     url: "",
     drinks: [],
-    selected: []
+    selected: [],
+    select: (id:number)=>{},
+    unSelect: (id:number) =>{},
+    onChange:(str:string) =>{},
+    onClick:(str:string) => {}
 }
 
 export type Action = 

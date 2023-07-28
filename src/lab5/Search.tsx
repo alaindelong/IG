@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import StateContext from "./StateContext";
 
 interface SearchProps{
     searchStr: string,
@@ -6,6 +7,7 @@ interface SearchProps{
     onClick:(str:string) => void
 }
 function Search(props:SearchProps){
+   // const state = useContext(StateContext)
     return(
         <div className="row">
             <div className="col-md-9">
