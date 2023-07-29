@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useReducer } from "react";
-import StateContext from "./StateContext";
-import { initialState, reducer } from "./State";
+import React from "react";
+
 
 interface SearchProps{
     searchStr: string,
@@ -9,7 +8,6 @@ interface SearchProps{
 }
 function Search(props:SearchProps){
 
-    //const [state,dispatch] = useReducer(reducer,initialState)
     return(
         <div className="row">
             <div className="col-md-9">

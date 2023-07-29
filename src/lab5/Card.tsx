@@ -1,7 +1,5 @@
 import React, { useContext, useReducer, useState } from "react";
 import IngredientDetails from "./IngredientDetails";
-import StateContext from "./StateContext";
-import { initialState, reducer } from "./State";
 import SelectContext from "./SelectContext";
 
 interface CardProps {
@@ -11,7 +9,7 @@ interface CardProps {
   description: string;
   ingredient: string[];
   quantity: number[];
- /* select: (id: number) => void;
+  /* select: (id: number) => void;
   unSelect: (id: number) => void;*/
 }
 
@@ -20,17 +18,16 @@ function Card(props: CardProps) {
   const [strIngredient, setStrIngredient] = useState("");
   const color = selected ? "blue" : "";
   const [show, setShow] = useState(false);
-  //const state = useContext(StateContext)
- //const [state,dispatch] = useReducer(reducer,initialState)
- const selec = useContext(SelectContext)
+
+  //to avoid passing props fonction
+  const selec = useContext(SelectContext);
   return (
-    <div className="card5" style={{ borderColor: color}}>
+    <div className="card5" style={{ borderColor: color }}>
       <div
-        
         onClick={() => {
           setSelected(!selected);
-           if(!selected) selec.unSelect(props.id) 
-            if(selected) selec.select(props.id)//props.unSelect(props.id)
+          if (!selected) selec.unSelect(props.id); //props.select(props.id)
+          if (selected) selec.select(props.id); //props.unSelect(props.id)
         }}
       >
         <h3>Card</h3>
@@ -60,8 +57,9 @@ function Card(props: CardProps) {
           )}
         </ul>
       </div>
-      <div>{show && <IngredientDetails strIngredient={strIngredient} />}</div>
+      <div className="card-body">{show && <IngredientDetails strIngredient={strIngredient} />}</div>
     </div>
+  
   );
 }
 export default Card;
