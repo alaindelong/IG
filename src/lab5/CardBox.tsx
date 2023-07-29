@@ -6,9 +6,9 @@ import StateContext from "./StateContext";
 
 
 interface CardBoxProps{
-  /*  drinks:Drink[],
+  /*  drinks:Drink[],*/
     select: (id:number) =>void
-    unSelect: (id:number) =>void*/
+    unSelect: (id:number) =>void
 }
 
 function CardBox( props: CardBoxProps) {

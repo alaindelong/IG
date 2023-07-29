@@ -20,26 +20,43 @@ export interface State{
     url:string,
     drinks: Drink[],
     selected: number[],
-    select: (id:number) =>void,
-    unSelect: (id:number) =>void,
-    onChange:(str:string) =>void,
-    onClick:(str:string) => void
+   
 }
 
 export const initialState:State ={
     searchStr: "",
-    url: "",
+    url: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=",
     drinks: [],
     selected: [],
-    select: (id:number)=>{},
-    unSelect: (id:number) =>{},
-    onChange:(str:string) =>{},
-    onClick:(str:string) => {}
 }
 
 export type Action = 
+| {type:'SET_SEARCH_STR', searchStr:string}
 | {type:'SEARCH', searchStr:string}
 //| {type:'SET_URL'}
 | {type:'SET_DRINKS', drinks:Drink[]}
 | {type:'SELECT', cardId:number}
 | {type:'UNSELECT', cardId:number}
+| {type:'RESET_SELECT'}
+
+const prefix = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
+export function reducer(state:State, action:Action){
+    switch(action.type){
+        case 'SET_SEARCH_STR':
+            return{...state,searchStr:action.searchStr}
+        case 'SEARCH':{
+            return{...state,searchStr:action.searchStr,url:`${prefix}${action.searchStr}`}
+        }
+            
+        case 'SET_DRINKS':
+            return{...state,drinks:action.drinks} 
+        case 'SELECT':
+            return{...state,selected:state.selected.filter( el => el !== action.cardId)} 
+        case 'UNSELECT':
+            return{...state,selected:[...state.selected,action.cardId]} 
+        case 'RESET_SELECT':
+            return {...state,selected:[]}   
+        default:
+            return state          
+    }
+}

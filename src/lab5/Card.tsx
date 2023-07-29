@@ -1,6 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useReducer, useState } from "react";
 import IngredientDetails from "./IngredientDetails";
 import StateContext from "./StateContext";
+import { initialState, reducer } from "./State";
+import SelectContext from "./SelectContext";
 
 interface CardProps {
   id: number;
@@ -18,15 +20,17 @@ function Card(props: CardProps) {
   const [strIngredient, setStrIngredient] = useState("");
   const color = selected ? "blue" : "";
   const [show, setShow] = useState(false);
-  const state = useContext(StateContext)
+  //const state = useContext(StateContext)
+ //const [state,dispatch] = useReducer(reducer,initialState)
+ const selec = useContext(SelectContext)
   return (
     <div className="card5" style={{ borderColor: color}}>
       <div
         
         onClick={() => {
           setSelected(!selected);
-           if(!selected) state.select(props.id) 
-            if(selected) state.unSelect(props.id)//props.unSelect(props.id)
+           if(!selected) selec.unSelect(props.id) 
+            if(selected) selec.select(props.id)//props.unSelect(props.id)
         }}
       >
         <h3>Card</h3>
