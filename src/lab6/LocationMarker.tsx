@@ -10,7 +10,7 @@ import { Measure } from "./App6";
 interface LocationMarkerProps {
   lat: number;
   lon: number;
-  onshowCard: (id: number, label: string, latt: number, long: number,measures:Measure[]) => void;
+  onshowCard: (id: string, label: string, latt: number, long: number) => void;
 }
 
 function LocationMarker(props: LocationMarkerProps) {
@@ -24,8 +24,7 @@ function LocationMarker(props: LocationMarkerProps) {
     },
   });
   const [items, setItems] = useState([]);
-  const [measures, setMeasures] = useState<Measure[]>([])
-  const [id,setId] = useState(0)
+  
 
   const url = `https://environment.data.gov.uk/flood-monitoring/id/stations?parameter=rainfall&lat=${position.lat}&long=${position.lng}&dist=20`;
   
@@ -52,21 +51,12 @@ function LocationMarker(props: LocationMarkerProps) {
                 console.log(
                   "dati label " + el.label + " dati id " + el.stationReference
                 );
-                const url2 = `https://environment.data.gov.uk/flood-monitoring/id/stations/${el.stationReference}/measures`
-                fetch(url2)
-                .then(response => response.json())
-                .then(data =>{
-                  setMeasures(data.items)
-                  console.log(" length after fecth click"+data.items.length)
-                  if(measures.length>=1)props.onshowCard(
-                    parseInt(el.stationReference),
-                    el.label,
-                    el.lat,
-                    el.long,measures
-                  );
-                })
-                .catch(error =>console.log("an error occurs "+error))
-                
+                props.onshowCard(
+                  el.stationReference,
+                  el.label,
+                  el.lat,
+                  el.long
+                );
               },
             }} 
           />

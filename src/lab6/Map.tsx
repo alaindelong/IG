@@ -12,25 +12,22 @@ function Map() {
   const center = latLng(lat, lon);
   const zoom = 6;
   const [show, setShow] = useState(false);
-  const [id, setId] = useState(0);
+  const [id, setId] = useState("");
   const [latt, setLatt] = useState(lat);
   const [long, setLong] = useState(lon);
   const [label, setLabel] = useState("");
   const [measures, setMeasures] = useState<Measure[]>([])
   const onshowCard = (
-    id: number,
+    id: string,
     label: string,
     latt: number,
-    long: number,
-    measures: Measure[]
+    long: number
   ) => {
     setShow(true);
     setId(id);
     setLabel(label);
     setLatt(latt);
     setLong(long);
-    setMeasures(measures)
-    console.log("measure "+measures.length)
   };
 
   const onCloseCard = () => {
@@ -52,7 +49,6 @@ function Map() {
             label={label}
             lat={latt}
             lon={long}
-            measures={measures}
             onshowCard={onCloseCard}
           />
         )}
