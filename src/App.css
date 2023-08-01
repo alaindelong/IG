@@ -106,7 +106,81 @@ li.active{
 .card6{
   display: flex;
   flex-direction: column;
-  width: 30vh;
-  height: 30vh;
+  min-width: 30vh;
+  min-height: 30vh;
   border-style:ridge;
+  padding: 2em;
+}
+.mybtn{
+border-radius: 3em;
+background-color:rgb(230, 90, 90);
+width: 5em;
+}
+
+/*CSS LAIB 7*/
+.mynavbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:rgb(233, 145, 113);
+  color: white;
+  height:4em;
+  padding: 1em;
+}
+
+.bttn{
+  border-style:ridge;
+  border-color:white;
+  border-width:0.2px;
+  background-color:rgb(233, 145, 113);
+  color:white
+}
+.clickable{
+  cursor: pointer;
+  color:white;
+}
+.home{
+  display: flex;
+  background-color:rgb(216, 208, 208);
+  justify-content: space-between;
+  padding: 2em;
+  box-sizing: border-box;
+}
+.divdescription{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  box-sizing:border-box;
+  margin-right: 2em;
+}
+.divmap{
+  display: flex;
+  flex-grow: 1;
+  box-sizing:border-box;
+}
+.leaflet-container7{
+  height: auto;
+  border-style:solid;
+  border-color: rgb(17, 118, 158);
+  border-width: 0.5px;
+  max-width: 80%;
+}
+.hotelbox{
+  display: flex;
+  flex-direction: column;
+  background-color:rgb(216, 208, 208);
+}
+.hotelBox-d2{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-grow:wrap
+}
+.card7{
+  display: flex;
+  flex-direction: column;
+  box-sizing:border-box;
+  min-height: 200px;
+  width: 18em;
 }

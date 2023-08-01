@@ -1,11 +1,10 @@
 import useAxios from "axios-hooks";
 import { error } from "console";
 import { LeafletMouseEvent, latLng } from "leaflet";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import { Marker, useMap, useMapEvents } from "react-leaflet";
-import Card from "./Card";
-import { click } from "@testing-library/user-event/dist/click";
-import { Measure } from "./App6";
+
+import { initialState, reducer } from "./State";
 
 interface LocationMarkerProps {
   lat: number;
@@ -14,35 +13,41 @@ interface LocationMarkerProps {
 }
 
 function LocationMarker(props: LocationMarkerProps) {
-  const [position, setPosition] = useState(latLng(props.lat, props.lon));
+ 
+  const [state,dispatch] = useReducer(reducer,initialState)
   const map = useMap();
   useMapEvents({
     click: (e: LeafletMouseEvent) => {
-      setPosition(e.latlng);
+      //setPosition(e.latlng);
+      const {lat,lng} = e.latlng
+      dispatch({type:'SET_POSITION',latt:lat,long:lng})
       map.flyTo(e.latlng, 9);
       console.log("clicked event " + e.latlng);
     },
   });
-  const [items, setItems] = useState([]);
   
 
-  const url = `https://environment.data.gov.uk/flood-monitoring/id/stations?parameter=rainfall&lat=${position.lat}&long=${position.lng}&dist=20`;
+  const url = `https://environment.data.gov.uk/flood-monitoring/id/stations?parameter=rainfall&lat=${state.latt}&long=${state.long}&dist=20`;
   
   
-  // const [{data,loading, error},refetch] = useAxios(url)
+   /*const [{data,loading, error},refetch] = useAxios(url)
 
-  // if(loading) return<p>loading.....</p>
-  // if(error) return<p>error!!!!!</p>
+   if(loading) return<p>loading.....</p>
+   if(error) return<p>error!!!!!</p>*/
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setItems(data.items))
+      .then((data) => {
+        dispatch({type:'SET_ITEMS',items:data.items})
+        //setItems(data.items)
+      })
       .catch((error) => console.log(error));
-  }, [url, position]);
+  }, [url, state.latt,state.long]);
+  
   return (
     <div>
       {
-        items.map((el: any, index: number) => (
+        state.items.map((el: any, index: number) => (
           <Marker 
             key={index}
             position={latLng(el.lat, el.long)}
