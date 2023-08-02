@@ -163,14 +163,15 @@ width: 5em;
   border-style:solid;
   border-color: rgb(17, 118, 158);
   border-width: 0.5px;
-  max-width: 80%;
+  /*width: 40%;*/
+  width: 100%;
 }
 .hotelbox{
   display: flex;
   flex-direction: column;
   background-color:rgb(216, 208, 208);
 }
-.hotelBox-d2{
+.hotelbox-d2{
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -181,6 +182,56 @@ width: 5em;
   display: flex;
   flex-direction: column;
   box-sizing:border-box;
-  min-height: 200px;
-  width: 18em;
+  height: 300px;
+  width: 270px;
+  margin: 10px;
+  border-radius:15px;
+  border-width:0.5px;
+  background-color: beige;
+}
+.card7-img{
+  height: 150px;
+  margin-bottom: 10px;
+  background-size: cover;
+  width: 100%;
+  border-radius:15px;
+}
+.card7:hover{
+  background-color:darkgray;
+  color:white;
+  cursor:pointer;
+  transform: scale(1.02);
+}
+.hotel-details{
+  display: flex;
+  background-color:rgb(216, 208, 208);
+  padding: 2em;
+  justify-content: center;
+}
+.hotel-details-d1{
+ display: flex;
+}
+.hotel-details-card{
+  display: flex;
+  flex-direction: column;
+  background-color:rgb(233, 145, 113);
+  color:white;
+  width: 20em;
+  margin-left: 5em;
+  height: 20em;
+  padding: 2em;
+}
+.hotel-details-d2{
+  background-color:whitesmoke;
+  padding: 2em;
+  margin-left: 5em;
+}
+.hotel-details-bttn{
+  border-style:ridge;
+  border-color:white;
+  border-width:0.2px;
+  background-color:rgb(233, 145, 113);
+  color:white;
+  border-radius:2em;
+  width: 15em;
 }

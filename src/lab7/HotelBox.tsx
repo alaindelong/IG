@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Hotel from "./Hotel";
 import HotelContext from "./HotelContext";
-import { wrap } from "module";
+import { useNavigate } from "react-router-dom";
+import {StateContext, useStateContext} from "./StateContext";
 
 function HotelBox() {
-  const hotels = useContext(HotelContext);
+  let [state,dispatch ]= useStateContext()
   return (
     <div className="hotelbox">
       <div
@@ -16,10 +17,8 @@ function HotelBox() {
       >
         <h6>Ostelli Sul Cammino Di Santiago di Galizia</h6>
       </div>
-      <div
-       className="row" 
-      >
-        {hotels.map((el) => (
+      <div className="row">
+        {state.hotels.map((el) => (
           <Hotel
             key={el.id}
             label={el.label}

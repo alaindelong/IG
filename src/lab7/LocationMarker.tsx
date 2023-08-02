@@ -3,21 +3,33 @@ import { HotelProps } from "./State";
 import { Marker, Popup } from "react-leaflet";
 import { latLng } from "leaflet";
 import HotelContext from "./HotelContext";
+import { useNavigate } from "react-router-dom";
+import {StateContext, useStateContext} from "./StateContext";
 
 interface LocationMarkerProps {
   lat: number;
   lon: number;
 }
 function LocationMarker(props: LocationMarkerProps) {
-    const markers = useContext(HotelContext)
+    const [markers,dispatch ]= useStateContext()
+    const navigate = useNavigate()
+    const onHotelDetails = (hotelId:number) =>{
+      navigate(`../hotels/${hotelId}`)
+      console.log("go to hotel details")
+    }
+   
   return (
     <div>
-      {markers.map((el) => (
+      {markers.hotels.map((el) => (
         <Marker
           key={el.id}
           position={latLng(el.lat, el.lng)}
           eventHandlers={{ mouseover: (event) => event.target.openPopup(),
-        mouseout:(event) =>event.target.closePopup() }}
+        mouseout:(event) =>event.target.closePopup(),
+        click:(event) =>{
+          onHotelDetails(el.id)
+        }
+       }}
         >
           <Popup>{el.label}</Popup>
         </Marker>

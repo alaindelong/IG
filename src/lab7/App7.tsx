@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { Reducer, useEffect, useReducer, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Bar from "./Bar";
-import { HotelProps } from "./State";
+import { Action, HotelProps, State, initialState, reducer } from "./State";
 import HotelContext from "./HotelContext";
+import { StateContext } from "./StateContext";
 
 function App7() {
   const urlData = "/lab7.json";
-  const [hotels, setHotels] = useState<HotelProps[]>([]);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     fetch(urlData)
       .then((response) => response.json())
-      .then((data) => setHotels(data))
+      .then((data) => {
+        dispatch({ type: "LOAD_HOTELS", hotels: data });
+      })
       .catch((error) => console.log("error fetching data " + error));
   }, []);
   return (
-    <HotelContext.Provider value={hotels}>
+    <StateContext.Provider value={[state,dispatch]}>
       <div className="container">
         <h1>LAIB7</h1>
         <Bar />
@@ -23,7 +27,7 @@ function App7() {
           <Outlet />
         </div>
       </div>
-    </HotelContext.Provider>
+    </StateContext.Provider>
   );
 }
 export default App7;

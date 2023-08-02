@@ -1,0 +1,110 @@
+[
+    {
+    "label": "Albergo del pellegrino di Caminha",
+    "id": 1,
+    "indirizzo": "Avenida Padre Pinheiro, 36 — Caminha – Portugal",
+    "lat": 41.8764,
+    "lng": -8.8343,
+    "descrizione": "L'Ostello dei Pellegrini di Caminha è un ostello pubblico esclusivamente per i pellegrini del Cammino Costiero Portoghese con credenziali, situato in una posizione centrale della città, ai piedi del Camino.\n\nInaugurato nel 2012, promosso dall'Associação dos Amigos do Caminho de Santiago de Viana do Castelo, dalla Câmara Municipal de Caminha e dalla Santa Casa da Misericórdia de Caminha, ha la missione di ospitare i pellegrini che percorrono il Cammino di Santiago o il Cammino di Fátima.",
+    "beds": 14,
+    "prezzo": 8,
+    "img": "https://www.alberguescaminosantiago.com/wp-content/uploads/2019/01/Albergue_de_Peregrinos_de_Caminha_Portugal_Camino_Portugues_por_la_Costa_02.jpg",
+    "km": 0
+    },
+    {
+    "label": "Monastero di Oia",
+    "id": 2,
+    "indirizzo": "Rúa do Párroco Don Claudio Rodal Fandiño 36794 – Oia, Pontevedra",
+    "lat": 42.0057,
+    "lng": -8.8752,
+    "descrizione": "La Residenza del Monasterio di Oia è nata e cresciuta intorno al monastero. L'obiettivo del progetto è quello di riportarlo alla sua posizione di asse centrale della città: portare valore e crescita economica, diventare il cuore della città e attrarre visitatori e nuove opportunità di sviluppo.",
+    "beds": 5,
+    "prezzo": 5,
+    "img": "https://www.mosteirodeoia.com/wp-content/uploads/2019/02/monasterio_4.jpg",
+    "km": 16
+    },
+    {
+    "label": "Albergo Estela do Mar di Baiona",
+    "id": 3,
+    "indirizzo": "Rúa Laureano Salgado, 15 — Baiona – Pontevedra",
+    "lat": 42.1213,
+    "lng": -8.8526,
+    "descrizione": "L'Estela do Mar Hostel è un ostello privato per i pellegrini del Cammino Portoghese lungo la costa, ma anche per i turisti e i viaggiatori, situato nella città di Baiona, sul percorso del Camino.\n\nInaugurato nel 2018, l'Estela do Mar Hostel si trova in una posizione centrale di Baiona, a soli 100 m. dal centro storico.",
+    "beds": 15,
+    "prezzo": 6,
+    "img": "https://www.alberguescaminosantiago.com/wp-content/uploads/2019/01/Albergue_Estela_do_Mar_Baiona_Pontevedra_Camino_Portugues_por_la_Costa_08.jpg",
+    "km": 33
+    },
+    {
+    "label": "Albergo del pellegrino della Xunta de Galicia di Vigo",
+    "id": 4,
+    "indirizzo": "Ribeira do Berbés, 5 — Vigo – Pontevedra",
+    "lat": 42.2377,
+    "lng": -8.7289,
+    "descrizione": "L'ostello per pellegrini della Xunta de Galicia a Vigo è un ostello pubblico della Xunta de Galicia destinato esclusivamente ai pellegrini che percorrono il Cammino Portoghese lungo la costa con credenziali, situato in una posizione molto centrale di Vigo, nel centro storico.\n\nInaugurato nel luglio 2021, l'ostello per pellegrini di Vigo è intitolato a Juan Manuel López-Chaves, promotore del Cammino Portoghese, presidente onorario dell'Associazione degli Amici dei Pazos e uno degli artefici del riconoscimento internazionale del Cammino di Santiago.",
+    "beds": 30,
+    "prezzo": 3,
+    "img": "https://www.alberguescaminosantiago.com/wp-content/uploads/2021/08/Albergue_Xunta_de_Galicia_Vigo_Camino_Portugues_por_la_Costa_20.jpg",
+    "km": 49
+    },
+    {
+    "label": "Albergo del pellegrino Casa da Torre di Redondela",
+    "id": 5,
+    "indirizzo": "Plaza Ribadavia, Redondela – Pontevedra",
+    "lat": 42.2821,
+    "lng": -8.6085,
+    "descrizione": "L'ostello per pellegrini Casa da Torre è un ostello pubblico esclusivamente per i pellegrini del Cammino di Santiago portoghese con credenziali, gestito dalla Xunta de Galicia, situato nella città di Pontevedra, Redondela.\n\nInaugurato nel 1999, l'ostello Casa da Tore è una casa del XVI secolo, completamente ristrutturata come ostello per pellegrini.",
+    "beds": 18,
+    "prezzo": 7,
+    "img": "https://www.alberguescaminosantiago.com/wp-content/uploads/2019/01/Albergue_peregrinos_Xunta_Galicia_Redondela_Casa_da_Torre_Camino_Portugues_01.jpg",
+    "km": 65
+    },
+    {
+    "label": "Albergo del pellegrino di Pontevedra",
+    "id": 6,
+    "indirizzo": "Plaza Ribadavia, Redondela – Pontevedra",
+    "lat": 42.4195,
+    "lng": -8.6361,
+    "descrizione": "L'ostello Virgen Peregrina è un ostello pubblico esclusivamente per i pellegrini del Cammino di Santiago con credenziali, gestito dalla Xunta de Galicia, situato nella città di Pontevedra, sul Cammino Portoghese in Galizia.\n\nQuando è pieno, e se possibile, vengono attivati il centro sportivo e altri alloggi alternativi nelle vicinanze. A partire dalle 22:00, l'Ostello Virgen Peregrina è sorvegliato di notte.",
+    "beds": 40,
+    "prezzo": 3,
+    "img": "https://www.alberguescaminosantiago.com/wp-content/uploads/2018/03/Albergue_Virgen_Peregrina_Pontevedra_Camino_Portugues_03.jpg",
+    "km": 85
+    },
+    {
+    "label": "Monastero di Armenteira",
+    "id": 7,
+    "indirizzo": "Lugar de la Iglesia, s/n, 36192 A Armenteira, Pontevedra, Spagna",
+    "lat": 43.2333,
+    "lng": -8.675,
+    "descrizione": "Tra gli estuari di Pontevedra e Arousa, nella regione di Salnés, sorge l'antico monastero cistercense di Armenteira, abitato da una comunità di monache dello stesso ordine.\nI primi monaci cistercensi fondarono i loro monasteri nelle valli, così il monastero di Armenteira si trova in una splendida valle fertilizzata dall'acqua, metafora della grazia di Dio che si riversa nei cuori. Le stanze accolgono i pellegrini all'arrivo",
+    "beds": 8,
+    "prezzo": 30,
+    "img": "https://www.galiciamaxica.eu/wp-content/uploads/2020/08/Armenteira_9.jpg",
+    "km": 101
+    },
+    {
+    "label": "Albergo del pellegrino della  Xunta di Galicia de Padrón",
+    "id": 8,
+    "indirizzo": "Costiña do Carme, s/n. – Padrón – La Coruña",
+    "lat": 42.7389,
+    "lng": -8.6629,
+    "descrizione": "Tra gli estuari di Pontevedra e Arousa, nella regione di Salnés, sorge l'antico monastero cistercense di Armenteira, abitato da una comunità di monache dello stesso ordine.\nI primi monaci cistercensi fondarono i loro monasteri nelle valli, così il monastero di Armenteira si trova in una splendida valle fertilizzata dall'acqua, metafora della grazia di Dio che si riversa nei cuori. Le stanze accolgono i pellegrini all'arrivo",
+    "beds": 25,
+    "prezzo": 8,
+    "img": "https://www.alberguescaminosantiago.com/wp-content/uploads/2018/03/Albergue_de_peregrinos_de__la_Xunta_de_Galicia_Padron_01.jpg",
+    "km": 121
+    },
+    {
+    "label": "Albergo del pellegrino di Faramello",
+    "id": 9,
+    "indirizzo": "Vilares de Calo, Rúa de Francos, A Coruña, Spagna",
+    "lat": 42.8105,
+    "lng": -8.6225,
+    "descrizione": "L'ostello per pellegrini di Faramello nel comune di Teo è un ostello pubblico esclusivamente per i pellegrini del Cammino di Santiago con credenziali, gestito dalla Xunta de Galicia, situato nel comune di Teo, sul Cammino Portoghese in Galizia. Aperto nel 2001, l'ostello di Teo si trova a 150 metri dal percorso del Camino, ma ben segnalato. A 250 metri di distanza si trova un bar e a 700 metri un ristorante.",
+    "beds": 10,
+    "prezzo": 5,
+    "img": "https://lh5.googleusercontent.com/p/AF1QipPYeKa8OVtPu8OCH0Gil64Byc7GFE8_SaXpyEhh=w408-h306-k-no",
+    "km": 148
+    }
+    ]

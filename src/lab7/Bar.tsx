@@ -12,6 +12,10 @@ function Bar(){
     console.log("go to hotels")
     navigate("hotels")
    }
+   const onBooking = () =>{
+    console.log("go to booking page")
+    navigate("booking")
+   }
     return(
         <div className="mynavbar">
             <div>
@@ -24,7 +28,7 @@ function Bar(){
                 <span className="clickable" onClick={onHotel}>Ostelli</span>
             </div>
             <div>
-                <button className="bttn">
+                <button className="bttn" type="button" onClick={onBooking}>
                     Prenotazioni<i className="bi bi-cart2"></i></button>
             </div>
             
