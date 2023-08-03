@@ -15,6 +15,9 @@ function App7() {
       .then((response) => response.json())
       .then((data) => {
         dispatch({ type: "LOAD_HOTELS", hotels: data });
+        for(var i=0;i<data.length;i++){
+          dispatch({type:'SET_BORDER_COLOR',hotelId:data[i].id,color:"#037ffc"})
+        }
       })
       .catch((error) => console.log("error fetching data " + error));
   }, []);

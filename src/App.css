@@ -235,3 +235,11 @@ width: 5em;
   border-radius:2em;
   width: 15em;
 }
+.booking-card{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 20em;
+  border-style: ridge;
+  padding: 1em;
+}

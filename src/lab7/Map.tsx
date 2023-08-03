@@ -10,7 +10,7 @@ function Map() {
   const lat = 42.2821;
   const lon = -8.6085;
   const center = latLng(lat, lon);
-  const zoom = 8;
+  const zoom = 9;
   
   return (
     <div className="leaflet-container7">

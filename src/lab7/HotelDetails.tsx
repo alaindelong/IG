@@ -13,29 +13,33 @@ function HotelDetails() {
   const navigate = useNavigate();
   const [state, dispatch] = useStateContext();
   const [booked, setBooked] = useState(true);
-
+  const color ="#fc0335"
   const onBooking = () => {
     //1 notte per tappa -> se booking vide, alors aggiungi
     // se booking non vide check si current date - prev date is 1
     if (hotelId) {
-      if (state.bookings.length === 0)
+      if (state.bookings.length === 0){
         dispatch({
           type: "ADD_TO_BOOKING",
           hotelId: parseInt(hotelId),
           date: dateToStr,
         });
+     dispatch({type:'SET_BORDER_COLOR',hotelId:parseInt(hotelId),color:color})
+    }
       else if (
         compareDate(
           state.bookings[state.bookings.length - 1].bookingDate,
           dateToStr
         ) === 1 &&
         state.bookings[state.bookings.length - 1].hotel.id !== parseInt(hotelId)
-      )
+      ){
         dispatch({
           type: "ADD_TO_BOOKING",
           hotelId: parseInt(hotelId),
           date: dateToStr,
         });
+        dispatch({type:'SET_BORDER_COLOR',hotelId:parseInt(hotelId),color:color})
+    }
       else setBooked(false);
     }
 

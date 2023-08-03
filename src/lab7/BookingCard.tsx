@@ -5,15 +5,7 @@ import { StateContext, useStateContext } from "./StateContext";
 function BookingCard(props: BookingCardProps) {
   const [state, dispatch] = useStateContext();
   const [dist, setDist] = useState(0);
-  const [style, setStyle] = useState({
-    display: "flex" as 'flex',
-    flexDirection: "column" as 'column',
-    backgroundColor: "white" as 'white',
-    width: "20em" as '20em',
-    borderStyle: "ridge" as 'ridge',
-    padding: "1em" as '1em',
-    borderColor:"white" as 'white'
-})
+  const [color, setColor] = useState("#037ffc") //rouge
   const onRemove = () => {
     console.log("hotel with id removed " + props.hotel.id);
     dispatch({ type: "REMOVE_FROM_BOOKING", hotelId: props.hotel.id });
@@ -30,10 +22,14 @@ function BookingCard(props: BookingCardProps) {
     calculateDistance();
   }, []);
   return (
-    <div
-      style={style}
-      onMouseEnter={()=>{setStyle({...style,borderColor:"red" as 'white'})}}
-      onMouseLeave={()=>setStyle({...style,borderColor:"white" as 'white'})}
+    <div className="booking-card"
+      style={{borderColor:state.borderColors[props.hotel.id]?state.borderColors[props.hotel.id]:color}}
+      onMouseEnter={()=>{
+        dispatch({type:'SET_BORDER_COLOR',hotelId:props.hotel.id,color:"#fc0335"})
+        }}
+      onMouseLeave={()=>{
+        dispatch({type:'SET_BORDER_COLOR',hotelId:props.hotel.id,color:"#037ffc"})
+        }}
     >
       <h6>{props.hotel.label}</h6>
       <p>

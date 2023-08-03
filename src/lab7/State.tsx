@@ -21,17 +21,20 @@ export interface BookingCardProps {
 export interface State {
   hotels: HotelProps[];
   bookings: BookingCardProps[];
+  borderColors:string[]
 }
 
 export const initialState: State = {
   hotels: [],
-  bookings: []
+  bookings: [],
+  borderColors:[]
 };
 
 export type Action =
   | { type: "LOAD_HOTELS"; hotels: HotelProps[] }
   | { type: "ADD_TO_BOOKING"; hotelId: number; date: string }
-  | { type: "REMOVE_FROM_BOOKING"; hotelId: number };
+  | { type: "REMOVE_FROM_BOOKING"; hotelId: number }
+  | { type: 'SET_BORDER_COLOR',hotelId:number,color:string};
 
 export const reducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -53,6 +56,10 @@ export const reducer = (state: State, action: Action) => {
         ...state,
         bookings: [...state.bookings.filter((b) => b.hotel.id !== action.hotelId)],
       };
+    case 'SET_BORDER_COLOR':
+        let tmp = state.borderColors
+        tmp[action.hotelId]=action.color
+        return{...state,borderColors:tmp}  
     default:
       return state;
   }
