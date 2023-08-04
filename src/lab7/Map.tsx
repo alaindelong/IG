@@ -10,11 +10,11 @@ function Map() {
   const lat = 42.2821;
   const lon = -8.6085;
   const center = latLng(lat, lon);
-  const zoom = 9;
+  const zoom = 8;
   
   return (
-    <div className="leaflet-container7">
-      <MapContainer center={center} zoom={zoom} scrollWheelZoom={false}>
+    <div className="row" style={{height:"100%"}}>
+      <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} style={{height:"inherit"}}>
         <TileLayer url={url} />
         <LocationMarker lat={lat} lon={lon}/>
       </MapContainer>

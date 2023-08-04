@@ -23,10 +23,15 @@ function App7() {
   }, []);
   return (
     <StateContext.Provider value={[state,dispatch]}>
-      <div className="container">
-        <h1>LAIB7</h1>
-        <Bar />
-        <div>
+      <div className="col">
+        <div className="row">
+           <h1>LAIB7</h1>
+        </div>
+        <div className="row" style={{backgroundColor:"#e99171",height:"5em"}}>
+           <Bar />
+        </div>
+        
+        <div className="row">
           <Outlet />
         </div>
       </div>

@@ -17,17 +17,17 @@ function Bar(){
     navigate("booking")
    }
     return(
-        <div className="mynavbar">
-            <div>
+          <div className="row p-3">
+            <div className="col-xs-12 col-sm-4">
                 <span className="clickable" onClick={onHome}>
                 <img src="/Cds.JPG" alt="" width="30" height="24"/>
                     Il Cammino di Santiago
                 </span>
             </div>
-            <div >
+            <div className="col-xs-12 col-sm-4" >
                 <span className="clickable" onClick={onHotel}>Ostelli</span>
             </div>
-            <div>
+            <div className="col-xs-12 col-sm-4 d-flex flex-column align-self-end">
                 <button className="bttn" type="button" onClick={onBooking}>
                     Prenotazioni<i className="bi bi-cart2"></i></button>
             </div>

@@ -5,9 +5,14 @@ import { StateContext, useStateContext } from "./StateContext";
 function BookingCard(props: BookingCardProps) {
   const [state, dispatch] = useStateContext();
   const [dist, setDist] = useState(0);
-  const [color, setColor] = useState("#037ffc") //rouge
+  const [color, setColor] = useState("#037ffc"); //rouge
   const onRemove = () => {
     console.log("hotel with id removed " + props.hotel.id);
+    dispatch({
+      type: "SET_BORDER_COLOR",
+      hotelId: props.hotel.id,
+      color: "#037ffc",
+    });
     dispatch({ type: "REMOVE_FROM_BOOKING", hotelId: props.hotel.id });
   };
   const calculateDistance = () => {
@@ -22,26 +27,50 @@ function BookingCard(props: BookingCardProps) {
     calculateDistance();
   }, []);
   return (
-    <div className="booking-card"
-      style={{borderColor:state.borderColors[props.hotel.id]?state.borderColors[props.hotel.id]:color}}
-      onMouseEnter={()=>{
-        dispatch({type:'SET_BORDER_COLOR',hotelId:props.hotel.id,color:"#fc0335"})
-        }}
-      onMouseLeave={()=>{
-        dispatch({type:'SET_BORDER_COLOR',hotelId:props.hotel.id,color:"#037ffc"})
-        }}
+    <div
+      className="row booking-card"
+      style={{
+        borderColor: state.borderColors[props.hotel.id]
+          ? state.borderColors[props.hotel.id]
+          : color,
+      }}
+      onMouseEnter={() => {
+        dispatch({
+          type: "SET_BORDER_COLOR",
+          hotelId: props.hotel.id,
+          color: "#fc0335",
+        });
+      }}
+      onMouseLeave={() => {
+        dispatch({
+          type: "SET_BORDER_COLOR",
+          hotelId: props.hotel.id,
+          color: "#037ffc",
+        });
+      }}
     >
-      <h6>{props.hotel.label}</h6>
-      <p>
-        Data prenotazione: <span>{props.bookingDate}</span>
-      </p>
-      <p>Distanza dalla prossima tappa: {dist}</p>
-      <p>
-        Prezzo: {props.hotel.prezzo}{" "}
-        <button onClick={onRemove}>
-          <i className="bi bi-trash3"></i>
-        </button>
-      </p>
+      <div className="col">
+        <h6 className="border fw-bold p-1">{props.hotel.label}</h6>
+        <div className="border p-1">
+          <p>
+            <span className="fw-bold">Data prenotazione:</span>{" "}
+            <span>{props.bookingDate}</span>
+          </p>
+          <p>
+            <span className="fw-bold">Distanza dalla prossima tappa:</span>{" "}
+            {dist} km
+          </p>
+        </div>
+        <p className="d-flex justify-content-between border p-1">
+          <span>
+            {" "}
+            <span className="fw-bold">Prezzo:€</span> {props.hotel.prezzo}{" "}
+          </span>
+          <button onClick={onRemove}>
+            <i className="bi bi-trash3"></i>
+          </button>
+        </p>
+      </div>
     </div>
   );
 }

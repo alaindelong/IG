@@ -3,10 +3,10 @@ import Map from "./Map"
 
 function Home(){
     return(
-        <div className="home">
-            <div className="divdescription">
+        <div className="row p-4" style={{minHeight:"60em"}}>
+            <div className="col-xs-12 col-sm-6 mr-2">
                 <h5 style={{color:"orangered"}}>Organizza il tuo itinerarion sulla Via Portoghese in Galicia</h5>
-                <p>
+                <p className="mt-4">
                 Questo itinerario si snoda verso ovest costeggiando il fiume Miño, 
                 fino a raggiungere il suo ampio estuario. A dominare il paesaggio 
                 troviamo il monte di Santa Trega, belvedere che domina l'Atlantico 
@@ -31,7 +31,7 @@ function Home(){
                     <img src="/cammino.jpg" alt=""/>
                 </div>
             </div>
-            <div className="divmap">
+            <div className="col-xs-12 col-sm-6">
                 <Map/>
             </div>
         </div>
